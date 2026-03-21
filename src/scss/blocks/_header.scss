@@ -1,0 +1,39 @@
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__nav-link {
+    color: $text-color;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-hover;
+    }
+
+    &--active {
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+}

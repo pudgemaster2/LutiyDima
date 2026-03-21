@@ -1,0 +1,50 @@
+// 1. Переменные
+@import 'variables';
+
+// 2. Обнуление стилей
+@import 'base/reset';
+
+// 3. Блоки
+@import 'blocks/header';
+@import 'blocks/footer';
+
+// 4. Стили главной страницы (пример класса)
+.main {
+  flex-grow: 1;
+  padding: 40px 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &__text {
+    margin-bottom: 15px;
+  }
+
+  &__list-item {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: $primary-color;
+    }
+  }
+}
