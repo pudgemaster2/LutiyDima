@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite Vanilla Starter</title>
-    <!-- Прямое подключение главного SCSS файла -->
-    <link rel="stylesheet" href="/src/scss/main.scss" />
-  </head>
-  <body>
-    <!-- Импортируем header.html -->
-    {{> header }}
 
-    <main class="main">
-      <div class="main__container">
-        <h1 class="main__title">Добро пожаловать в проект!</h1>
-        <div class="main__content">
-          <p class="main__text">Этот шаблон настроен для использования:</p>
-          <ul class="main__list">
-            <li class="main__list-item">Vite для быстрой сборки</li>
-            <li class="main__list-item">SCSS с БЭМ (максимум 3 уровня вложенности)</li>
-            <li class="main__list-item">Handlebars для компонентов</li>
-            <li class="main__list-item">Vanilla JS</li>
-          </ul>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite Vanilla Starter</title>
+  <!-- Прямое подключение главного SCSS файла -->
+  <link rel="stylesheet" href="/src/scss/main.scss" />
+</head>
+
+<body>
+  <!-- Импортируем header.html -->
+  {{> header }}
+
+  <main class="main">
+    <div class="test">test</div>
+    <div class="main__container">
+      <h1 class="main__title">Добро пожаловать в проект!</h1>
+      <div class="main__content">
+        <p class="main__text">Этот шаблон настроен для использования:</p>
+        <ul class="main__list">
+          <li class="main__list-item">Vite для быстрой сборки</li>
+          <li class="main__list-item">SCSS с БЭМ (максимум 3 уровня вложенности)</li>
+          <li class="main__list-item">Handlebars для компонентов</li>
+          <li class="main__list-item">Vanilla JS</li>
+        </ul>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Импортируем footer.html -->
-    {{> footer }}
+  <!-- Импортируем footer.html -->
+  {{> footer }}
 
-    <!-- Подключение главного JS файла -->
-    <script type="module" src="/src/js/main.js"></script>
-  </body>
+  <!-- Подключение главного JS файла -->
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
 </html>
