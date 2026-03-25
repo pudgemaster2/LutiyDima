@@ -9,9 +9,19 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
     "sass": "^1.72.0",
     "vite": "^5.2.0",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-handlebars": "^2.0.0"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 0.5%",
+    "not dead"
+  ],
+  "dependencies": {
+    "swiper": "^12.1.2"
   }
 }
