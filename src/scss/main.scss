@@ -1,3 +1,4 @@
+// 1. Переменные
 @import 'variables';
 @import 'swiper/css';
 @import 'swiper/css/navigation';
@@ -42,7 +43,7 @@
 @import 'blocks/header';
 @import 'blocks/footer';
 
-// 4. Стили главной страницы (пример класса)
+// 4. Стили главной страницы
 .main {
   flex-grow: 1;
   padding: 40px 0;
@@ -53,6 +54,13 @@
     padding: 0 20px;
   }
 
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+    align-items: start;
+  }
+
   &__title {
     font-size: 32px;
     margin-bottom: 20px;
@@ -61,24 +69,101 @@
   &__content {
     background-color: #fff;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
 
   &__text {
     margin-bottom: 15px;
+    color: #4a5568;
   }
 
   &__list-item {
-    margin-bottom: 8px;
-    padding-left: 20px;
+    margin-bottom: 12px;
+    padding-left: 24px;
     position: relative;
+    color: #2d3748;
 
     &::before {
-      content: "•";
+      content: "→";
       position: absolute;
       left: 0;
-      color: $primary-color;
+      color: #3182ce;
+      font-weight: bold;
+    }
+  }
+}
+
+// Sidebar & Banner
+.sidebar {
+  position: sticky;
+  top: 40px;
+}
+
+.banner {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background: #2d3748;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  &__content {
+    padding: 24px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #fff, #bee3f8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    opacity: 0.9;
+  }
+
+  &__button {
+    background: #fff;
+    color: #2b6cb0;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    &:hover {
+      background: #bee3f8;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
 }
