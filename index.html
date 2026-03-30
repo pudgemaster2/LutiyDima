@@ -13,15 +13,20 @@
 
     <main class="main">
       <div class="main__container">
-        <h1 class="main__title">Добро пожаловать в проект!</h1>
-        <div class="main__content">
-          <p class="main__text">Этот шаблон настроен для использования:</p>
-          <ul class="main__list">
-            <li class="main__list-item">Vite для быстрой сборки</li>
-            <li class="main__list-item">SCSS с БЭМ (максимум 3 уровня вложенности)</li>
-            <li class="main__list-item">Handlebars для компонентов</li>
-            <li class="main__list-item">Vanilla JS</li>
-          </ul>
+        <div class="main__wrapper">
+          <section class="main__content-area">
+            <h1 class="main__title">Добро пожаловать в проект!</h1>
+            <div class="main__content">
+              <p class="main__text">Этот шаблон настроен для использования:</p>
+              <ul class="main__list">
+                <li class="main__list-item">Vite для быстрой сборки</li>
+                <li class="main__list-item">SCSS с БЭМ (максимум 3 уровня вложенности)</li>
+                <li class="main__list-item">Handlebars для компонентов</li>
+                <li class="main__list-item">Vanilla JS</li>
+              </ul>
+            </div>
+          </section>
+          {{> sidebar }}
         </div>
       </div>
     </main>
