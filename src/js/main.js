@@ -34,4 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
       this.classList.add('header__nav-link--active');
     });
   });
+
+  // Эффект "докручивания" планет при клике (добавляем 315° к hover-смещению)
+  let moonSpins = 0;
+  let earthSpins = 0;
+  
+  const moonBtn = document.querySelector('.slider-nav--moon');
+  const moonImg = document.querySelector('.moon-image');
+  if (moonBtn && moonImg) {
+      moonBtn.addEventListener('click', () => {
+          moonSpins -= 360; // Полный оборот назад относительно нуля (hover применяет -45 поверх этого)
+          moonImg.style.setProperty('--base-spin', `${moonSpins}deg`);
+      });
+  }
+
+  const earthBtn = document.querySelector('.slider-nav--earth');
+  const earthImg = document.querySelector('.earth-image');
+  if (earthBtn && earthImg) {
+      earthBtn.addEventListener('click', () => {
+          earthSpins += 360; // Полный оборот вперед
+          earthImg.style.setProperty('--base-spin', `${earthSpins}deg`);
+      });
+  }
 });
