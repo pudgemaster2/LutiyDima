@@ -25,64 +25,12 @@
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
 
-    <!-- Custom navigation buttons: Moon (prev) & Earth (next) -->
+    <!-- Custom navigation buttons: Realistic Moon & Earth -->
     <div class="swiper-button-prev slider-nav slider-nav--moon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="44" height="44">
-            <!-- Moon: crescent shape -->
-            <defs>
-                <radialGradient id="moonGrad" cx="35%" cy="35%" r="65%">
-                    <stop offset="0%" stop-color="#c8d8f0"/>
-                    <stop offset="100%" stop-color="#3a4a6b"/>
-                </radialGradient>
-                <filter id="moonShadow">
-                    <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#1a2a50" flood-opacity="0.7"/>
-                </filter>
-            </defs>
-            <!-- Full circle -->
-            <circle cx="32" cy="32" r="26" fill="url(#moonGrad)" filter="url(#moonShadow)" opacity="0.9"/>
-            <!-- Shadow circle to create crescent -->
-            <circle cx="40" cy="28" r="22" fill="#1a1f3a" opacity="0.82"/>
-            <!-- Craters for detail -->
-            <circle cx="20" cy="38" r="3" fill="#8899bb" opacity="0.4"/>
-            <circle cx="15" cy="24" r="2" fill="#8899bb" opacity="0.3"/>
-            <circle cx="26" cy="44" r="1.5" fill="#8899bb" opacity="0.35"/>
-        </svg>
+        <div class="planet-image moon-image"></div>
     </div>
     <div class="swiper-button-next slider-nav slider-nav--earth">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="44" height="44">
-            <!-- Earth: blue-green planet with shadow -->
-            <defs>
-                <radialGradient id="earthGrad" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" stop-color="#5bc8f5"/>
-                    <stop offset="50%" stop-color="#1a78c2"/>
-                    <stop offset="100%" stop-color="#0a2a5c"/>
-                </radialGradient>
-                <radialGradient id="earthShadowGrad" cx="70%" cy="60%" r="55%">
-                    <stop offset="0%" stop-color="#000820" stop-opacity="0"/>
-                    <stop offset="100%" stop-color="#000820" stop-opacity="0.72"/>
-                </radialGradient>
-                <filter id="earthGlow">
-                    <feDropShadow dx="0" dy="0" stdDeviation="3.5" flood-color="#1a78c2" flood-opacity="0.6"/>
-                </filter>
-                <clipPath id="earthClip">
-                    <circle cx="32" cy="32" r="26"/>
-                </clipPath>
-            </defs>
-            <!-- Base ocean -->
-            <circle cx="32" cy="32" r="26" fill="url(#earthGrad)" filter="url(#earthGlow)" opacity="0.92"/>
-            <!-- Continents -->
-            <g clip-path="url(#earthClip)" opacity="0.85">
-                <ellipse cx="26" cy="26" rx="8" ry="6" fill="#2d9e5f" transform="rotate(-20 26 26)"/>
-                <ellipse cx="38" cy="22" rx="5" ry="4" fill="#27894f" transform="rotate(10 38 22)"/>
-                <ellipse cx="22" cy="40" rx="6" ry="4" fill="#2d9e5f" transform="rotate(15 22 40)"/>
-                <ellipse cx="42" cy="38" rx="4" ry="3" fill="#27894f" transform="rotate(-10 42 38)"/>
-                <!-- cloud wisps -->
-                <ellipse cx="30" cy="18" rx="7" ry="2.5" fill="rgba(255,255,255,0.35)" transform="rotate(-10 30 18)"/>
-                <ellipse cx="44" cy="30" rx="5" ry="2" fill="rgba(255,255,255,0.25)" transform="rotate(20 44 30)"/>
-            </g>
-            <!-- Night shadow (half-dark overlay) -->
-            <circle cx="32" cy="32" r="26" fill="url(#earthShadowGrad)"/>
-        </svg>
+        <div class="planet-image earth-image"></div>
     </div>
 
     <!-- If we need scrollbar -->
