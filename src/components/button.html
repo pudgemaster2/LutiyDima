@@ -1,0 +1,9 @@
+{{#if href}}
+<a href="{{href}}" class="btn {{#if size}}btn--{{size}}{{/if}} {{#if variant}}btn--{{variant}}{{/if}} {{class}}" {{#if dataLink}}data-link{{/if}} {{#if modalOpen}}data-modal-open="{{modalOpen}}"{{/if}}>
+  {{text}}
+</a>
+{{else}}
+<button type="{{#if type}}{{type}}{{else}}button{{/if}}" class="btn {{#if size}}btn--{{size}}{{/if}} {{#if variant}}btn--{{variant}}{{/if}} {{class}}" {{#if modalOpen}}data-modal-open="{{modalOpen}}"{{/if}}>
+  {{text}}
+</button>
+{{/if}}
