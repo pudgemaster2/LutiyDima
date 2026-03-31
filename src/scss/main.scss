@@ -36,6 +36,62 @@
     }
 }
 
+// Кастомные кнопки навигации слайдера (Луна и Земля)
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 50%;
+    background: rgba(10, 15, 40, 0.55);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    // Скрываем стандартную стрелку Swiper
+    &::after {
+        display: none !important;
+    }
+
+    svg {
+        display: block;
+        transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    &:hover {
+        background: rgba(15, 25, 65, 0.75);
+        transform: scale(1.12) !important;
+    }
+}
+
+.slider-nav--moon {
+    box-shadow: 0 0 14px rgba(100, 140, 220, 0.35);
+
+    &:hover {
+        box-shadow: 0 0 24px rgba(120, 170, 255, 0.55);
+
+        svg {
+            filter: drop-shadow(0 0 8px rgba(150, 190, 255, 0.7));
+            transform: rotate(-15deg) scale(1.08);
+        }
+    }
+}
+
+.slider-nav--earth {
+    box-shadow: 0 0 14px rgba(30, 120, 200, 0.35);
+
+    &:hover {
+        box-shadow: 0 0 24px rgba(50, 150, 255, 0.55);
+
+        svg {
+            filter: drop-shadow(0 0 8px rgba(80, 180, 255, 0.7));
+            transform: rotate(15deg) scale(1.08);
+        }
+    }
+}
+
 // 2. Обнуление стилей
 @import 'base/reset';
 
