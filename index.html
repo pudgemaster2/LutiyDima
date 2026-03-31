@@ -18,7 +18,12 @@
       <div class="main__wrapper">
         <section class="main__content-area">
           {{> slider }}
-          <h1 class="main__title">Добро пожаловать в проект!</h1>
+          {{> title text="Добро пожаловать в проект!" class="main__title" tag="h1" }}
+          
+          <div style="margin-bottom: 20px;">
+            {{> button text="Открыть модальное окно" modalOpen="demo-modal" variant="primary" }}
+          </div>
+
           <div class="main__content">
             <p class="main__text">Этот шаблон настроен для использования:</p>
             <ul class="main__list">
@@ -33,6 +38,18 @@
       </div>
     </div>
   </main>
+
+  <!-- Пример использования динамической модалки -->
+  {{#> modal id="demo-modal" title="Настройки профиля" }}
+    <div class="modal__body">
+        <p class="main__text">Здесь можно изменить настройки вашего профиля.</p>
+        <input type="text" placeholder="Имя пользователя" style="margin-top:10px; padding: 8px; width: 100%;">
+    </div>
+    <div class="modal__footer" style="margin-top: 20px; display: flex; gap: 10px;">
+        {{> button text="Сохранить" variant="primary" size="m" class="test-btn" }}
+        <button data-modal-close class="btn">Отмена</button>
+    </div>
+  {{/modal}}
 
   <!-- Импортируем footer.html -->
   {{> footer }}

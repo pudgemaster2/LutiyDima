@@ -19,8 +19,58 @@ const initSwiper = () => {
     });
 };
 
+const initModals = () => {
+    // Время анимации из CSS (0.3s)
+    const ANIMATION_TIME = 300; 
+
+    // Выносим логику закрытия в отдельную функцию, чтобы не дублировать
+    const closeModal = (modal) => {
+        modal.classList.remove('modal--open');
+        
+        // Ждем, пока модалка исчезнет, прежде чем возвращать скроллбар
+        setTimeout(() => {
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = ''; // Убираем отступ
+        }, ANIMATION_TIME);
+    };
+
+    document.body.addEventListener('click', (e) => {
+        // Открытие модалки
+        const openBtn = e.target.closest('[data-modal-open]');
+        if (openBtn) {
+            e.preventDefault();
+            const modalId = openBtn.getAttribute('data-modal-open');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                // Вычисляем ширину скроллбара и компенсируем упущенное пространство
+                const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+                modal.classList.add('modal--open');
+                document.body.style.overflow = 'hidden'; // Блокируем скролл фона
+            }
+        }
+
+        // Закрытие по крестику
+        const closeBtn = e.target.closest('[data-modal-close]');
+        if (closeBtn) {
+            e.preventDefault();
+            const modal = closeBtn.closest('.modal');
+            if (modal) {
+                closeModal(modal);
+            }
+        }
+
+        // Закрытие по клику на фон (overlay)
+        if (e.target.classList.contains('modal')) {
+            closeModal(e.target);
+        }
+    });
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   initSwiper();
+  initModals();
   // Пример простого Vanilla JS (подсветка активной ссылки в шапке)
   const navLinks = document.querySelectorAll('.header__nav-link');
   
